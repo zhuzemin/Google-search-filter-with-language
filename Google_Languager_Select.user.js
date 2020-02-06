@@ -1,6 +1,12 @@
 // ==UserScript==
 // @name           Google_search_filter_with_Language
-// @description    Google搜索结果以语言过滤
+// @name:zh-CN            Google_search_filter_with_Language
+// @name:zh-TW            Google_search_filter_with_Language
+// @name:ja            Google_search_filter_with_Language
+// @description:zh-CN     Google result filter by language
+// @description:zh-TW     Google result filter by language
+// @description:ja     Google result filter by language
+// @description    Google result filter by language
 // @namespace      Google_search_filter_with_Language
 // @supportURL     https://github.com/zhuzemin
 // @include        https://www.google.*/search*
