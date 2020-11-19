@@ -11,22 +11,14 @@
 // @supportURL     https://github.com/zhuzemin
 // @include        https://www.google.*/search*
 // @author         zhuzemin
-// @version        1.1
+// @version        1.11
 // @grant		   none
 // ==/UserScript==
-var lr = document.createElement("lr");
+let searchBtn=document.querySelector("button.Tg7LZd");
+let lr = document.createElement("lr");
 lr.innerHTML = '<lr><a href="'+window.location.href.replace(/lr=lang_(.{1,16})/g, '').replace(/$/, '&lr=lang_en')+'">EN</a>/<a href="'+window.location.href.replace(/lr=lang_(.{1,16})/g, '').replace(/$/, '&lr=lang_ja')+'">JA</a>/<a href="'+window.location.href.replace(/lr=lang_(.{1,16})/g, '').replace(/$/, '&lr=lang_zh-TW')+'">TW</a>/<a href="'+window.location.href.replace(/lr=lang_(.{1,16})/g, '').replace(/$/, '&lr=lang_zh-CN')+'">CN</a>/<a href="'+window.location.href.replace(/lr=lang_(.{1,16})/g, '').replace(/$/, '&lr=lang_zh-CN|lang_zh-TW')+'">TW&CN</a>/<a href="'+window.location.href.replace(/lr=lang_(.{1,16})/g, '')+'">All Language</a></lr>'
-
-var logo=document.getElementsByClassName("Tg7LZd")[0]
-logo.parentNode.insertBefore(lr, logo);
-var links=document.querySelectorAll("a.q.qs");
-for(var link of links){
-  if(link.innerText.match(/Video|Image/)!=null){
-    logo.parentNode.insertBefore(link, logo);
-  }
-}
-/*var hdtbSum=document.querySelector("#hdtbSum");
-var hdtbMenus=document.querySelector("#hdtbMenus");
-logo.parentNode.insertBefore(hdtbMenus, logo);
-var searchform=document.querySelector("#searchform");
-searchform.insertBefore(hdtbSum, null);*/
+searchBtn.parentNode.insertBefore(lr, searchBtn);
+let video=document.querySelector("a[data-sc='V']");
+searchBtn.parentNode.insertBefore(video, searchBtn);
+let image=document.querySelector("a[data-sc='I']");
+searchBtn.parentNode.insertBefore(image, searchBtn);
